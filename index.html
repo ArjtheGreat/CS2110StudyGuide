@@ -3,6 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Include Prism CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/themes/prism.min.css" rel="stylesheet">
+
+    <!-- Include Prism JavaScript with Java language support -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/components/prism-clike.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/components/prism-java.min.js"></script>
+
     <title>CS 2110 Concepts Study Guide For Prelim 1</title>
     <style>
         body {
@@ -48,7 +56,8 @@
 
     <div class="example">
         <h2>1. Method Parts: Return Type, Parameters, Specification, Keywords, Types, Literals</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // Return type: int
             // Parameters: int a, int b
             // Keywords: return
@@ -57,12 +66,13 @@
             public int sum(int a, int b) {
                 return a + b;
             }
-        </code>
+        </code> </pre>
     </div>
 
     <div class="example">
         <h2>2. Class Parts: Fields, Methods, Constructors, Supertype</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // Fields: int count
             // Methods: increment(), getCount()
             // Constructor: Counter()
@@ -83,21 +93,23 @@
                     return count;
                 }
             }
-        </code>
+        </code> </pre>
     </div>
 
     <div class="example">
         <h2>3. Class Diagram Parts: Name, State, Behavior</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // Class name: Counter
             // State: count (field)
             // Behavior: increment(), getCount() (methods)
-        </code>
+        </code> </pre>
     </div>
 
     <div class="example">
         <h2>4. Create a Class Diagram from Code</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // Class: Fraction
             // Fields: numerator, denominator
             // Methods: getNumerator(), getDenominator()
@@ -119,12 +131,13 @@
                     return denominator;
                 }
             }
-        </code>
+        </code> </pre>
     </div>
 
     <div class="example">
         <h2>5. Field Declarations and Class Invariants</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // Fields: int value
             // Class invariant: value >= 0
 
@@ -135,30 +148,33 @@
                     this.value = 0; // invariant is truthified
                 }
             }
-        </code>
+        </code> </pre>
     </div>
 
     <div class="example">
         <h2>6. Default Field Values by Type</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // int -> 0
             // double -> 0.0
             // boolean -> false
             // object references -> null
-        </code>
+        </code> </pre>
     </div>
 
     <div class="example">
         <h2>7. Instantiate Object from Constructor</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // Constructor: Fraction(int numerator, int denominator)
             Fraction frac = new Fraction(1, 2);
-        </code>
+        </code> </pre>
     </div>
 
     <div class="example">
         <h2>8. Constructor to Satisfy Class Invariant</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // Fields: int numerator, int denominator
             // Class invariant: denominator != 0
 
@@ -169,43 +185,47 @@
                 this.numerator = numerator;
                 this.denominator = denominator;
             }
-        </code>
+        </code> </pre>
     </div>
 
     <div class="example">
         <h2>9. Invoke a Method</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // Method: increment()
             Counter counter = new Counter();
             counter.increment();
-        </code>
+        </code> </pre>
     </div>
 
     <div class="example">
         <h2>10. Method Body Based on Specification</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // Method specification: increments the count
             public void increment() {
                 count++;
             }
-        </code>
+        </code> </pre>
     </div>
 
     <div class="example">
         <h2>11. Name Scope in Code</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // 'x' is in scope inside the method body
 
             public void printX() {
                 int x = 10;
                 System.out.println(x);
             }
-        </code>
+        </code> </pre>
     </div>
 
     <div class="example">
         <h2>12. Shadowing Example</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // Local variable 'x' shadows field 'x'
             public class Test {
                 private int x = 5;
@@ -214,12 +234,13 @@
                     this.x = x; // 'this.x' refers to the field
                 }
             }
-        </code>
+        </code> </pre>
     </div>
 
     <div class="example">
         <h2>13. Client vs. Implementer Code</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // Client: invokes methods
             Counter counter = new Counter();
             counter.increment();
@@ -228,12 +249,13 @@
             public void increment() {
                 count++;
             }
-        </code>
+        </code> </pre>
     </div>
 
     <div class="example">
         <h2>14. Method Specification Parts: Preconditions, Postconditions, Effects</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // Preconditions: x must be positive
             // Postconditions: returns square of x
             // Effects: none
@@ -241,31 +263,34 @@
             public int square(int x) {
                 return x * x;
             }
-        </code>
+        </code> </pre>
     </div>
 
     <div class="example">
         <h2>15. Predicting Method Behavior from Specification</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // Given: square(2)
             // Prediction: returns 4
-        </code>
+        </code> </pre>
     </div>
 
     <div class="example">
         <h2>16. Annotate Method Body with Class Invariant</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // Class invariant: count >= 0
 
             public void increment() {
                 // count must be >= 0 here
                 count++;
             }
-        </code>
+        </code> </pre>
     </div>
     <div class="example">
         <h2>17. Write Defensive Code to Assert Preconditions of a Method</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // Method: withdraw(int amount)
             // Preconditions: amount > 0, amount <= balance
             
@@ -278,12 +303,13 @@
                 }
                 balance -= amount;
             }
-        </code>
+        </code> </pre>
     </div>
     
     <div class="example">
         <h2>18. Predict Access Result for Public/Private Members</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // Class with public and private members
             public class Account {
                 public String name;
@@ -294,12 +320,13 @@
             Account acc = new Account();
             acc.name = "John";  // allowed
             acc.balance = 100;  // compilation error (balance is private)
-        </code>
+        </code> </pre>
     </div>
     
     <div class="example">
         <h2>19. Write Client Code That Invalidates Class Invariant</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // Public field allows class invariant to be violated
             public class Counter {
                 public int value;  // Invariant: value >= 0
@@ -308,12 +335,13 @@
             // Client code
             Counter c = new Counter();
             c.value = -5;  // Violates class invariant
-        </code>
+        </code> </pre>
     </div>
     
     <div class="example">
         <h2>20. Encapsulate State with Public and Private Modifiers</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // Class members marked as public or private
             public class BankAccount {
                 private int balance;
@@ -321,12 +349,13 @@
                     balance += amount;
                 }
             }
-        </code>
+        </code> </pre>
     </div>
     
     <div class="example">
         <h2>21. Predict Whether a Class Implements an Interface</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // Interface: Flyable
             public interface Flyable {
                 void fly();
@@ -338,12 +367,13 @@
                     // Method implemented correctly, no compilation error
                 }
             }
-        </code>
+        </code> </pre>
     </div>
     
     <div class="example">
         <h2>22. Write a Class that Implements an Interface</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // Interface: ComplexNumber
             public interface ComplexNumber {
                 double getReal();
@@ -373,12 +403,13 @@
                     return new Complex(this.real + other.getReal(), this.imaginary + other.getImaginary());
                 }
             }
-        </code>
+        </code> </pre>
     </div>
     
     <div class="example">
         <h2>23. Write an Interface that Abstracts Common Behavior</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // Common behavior: drive()
             public interface Drivable {
                 void drive();
@@ -397,57 +428,62 @@
                     System.out.println("Truck is driving");
                 }
             }
-        </code>
+        </code> </pre>
     </div>
     
     <div class="example">
         <h2>24. State Subtype Relationships</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // Class hierarchy
             // Piece <: Rook, Piece <: King, Fraction not related
     
             // Subtypes:
             // Rook <: Piece
             // King <: Piece
-        </code>
+        </code> </pre>
     </div>
     
     <div class="example">
         <h2>25. Apply Compile-Time Reference Rule</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // Example: Piece p = new King();
             // Will compile if King extends Piece
             p.castle();  // Will compile if castle() is defined in Piece or King
-        </code>
+        </code> </pre>
     </div>
     
     <div class="example">
         <h2>26. Insert a Cast to Make Code Compile</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // Example: Object obj = "Hello";
             // Code will not compile because Object does not have length() method
             // Fix with a cast
     
             String str = (String)obj;
             System.out.println(str.length());
-        </code>
+        </code> </pre>
     </div>
     
     <div class="example">
         <h2>27. Perform a Runtime Check and Cast</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // Example: Object obj = "Hello";
     
             if (obj instanceof String) {
                 String str = (String)obj;
                 System.out.println(str.length());  // valid
             }
-        </code>
+        </code> </pre>
     </div>
     
     <div class="example">
         <h2>28. Classify a Cast</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // Example:
             Object obj = "Hello";
             
@@ -462,12 +498,13 @@
     
             // (iv) Not allowed at compile-time:
             // int num3 = (int)"abc";  // compile-time error
-        </code>
+        </code> </pre>
     </div>
     
     <div class="example">
         <h2>29. Use Bottom-Up Rule for Dynamic Dispatch</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // Example: Parent/Child class with dynamic dispatch
     
             public class Parent {
@@ -484,12 +521,13 @@
     
             Parent p = new Child();
             p.speak();  // prints "Child speaks" due to dynamic dispatch
-        </code>
+        </code> </pre>
     </div>
     
     <div class="example">
         <h2>30. Override a Method in a Subclass</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // Example: override Object.toString()
             public class Fraction {
                 private int numerator, denominator;
@@ -499,12 +537,13 @@
                     return numerator + "/" + denominator;
                 }
             }
-        </code>
+        </code> </pre>
     </div>
     
     <div class="example">
         <h2>31. Constructor Delegates to Superclass</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // Example: 3DPoint constructor delegates to 2DPoint
     
             public class Point2D {
@@ -524,12 +563,13 @@
                     this.z = z;   // initialize z here
                 }
             }
-        </code>
+        </code> </pre>
     </div>
     
     <div class="example">
         <h2>32. Method Delegates to Superclass</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // Example: negating 2D and 3D points
     
             public class Point2D {
@@ -550,12 +590,13 @@
                     z = -z;          // negate z here
                 }
             }
-        </code>
+        </code> </pre>
     </div>
     
     <div class="example">
         <h2>33. Classify a New Expression in Abstract Class Hierarchy</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // Example: Abstract class Animal
     
             abstract class Animal {
@@ -567,12 +608,13 @@
     
             // Allowed:
             Animal a = new Dog();  // if Dog is a concrete subclass
-        </code>
+        </code> </pre>
     </div>
     
     <div class="example">
         <h2>34. Revise Class to Make it Abstract</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // Example: Make Piece abstract
     
             // Before:
@@ -586,12 +628,13 @@
             public abstract class Piece {
                 public abstract void move();  // declare as abstract
             }
-        </code>
+        </code> </pre>
     </div>
     
     <div class="example">
         <h2>35. Add Class Object to Class Diagram</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // All classes implicitly extend Object
     
             public class MyClass {
@@ -605,12 +648,13 @@
                     return this == obj;
                 }
             }
-        </code>
+        </code> </pre>
     </div>
     
     <div class="example">
         <h2>36. Predict Equals() Comparisons</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // Example: Comparisons with equals() and ==
     
             MyClass obj1 = new MyClass();
@@ -618,12 +662,13 @@
     
             System.out.println(obj1 == obj2);     // false (different references)
             System.out.println(obj1.equals(obj2));  // false (not equal by equals)
-        </code>
+        </code> </pre>
     </div>
     
     <div class="example">
         <h2>37. Evaluate Equals() Properties</h2>
-        <code>
+        
+        <pre><code class="language-java">
             // Properties:
             // Reflexive: obj.equals(obj) -> true
             // Symmetric: obj1.equals(obj2) == obj2.equals(obj1)
@@ -639,7 +684,7 @@
             // Reflexive: true
             // Symmetric: true
             // Transitive: true
-        </code>
+        </code> </pre>
     </div>    
 </body>
 </html>
