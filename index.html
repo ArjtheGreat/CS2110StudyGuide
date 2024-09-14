@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Concepts Study Guide</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Improved font for readability */
+            background-color: #f4f4f4; /* Light grey background for less strain on the eyes */
+            color: #333; /* Dark grey text for better contrast */
+            line-height: 1.6; /* Improved line spacing */
+            margin: 20px; /* Adds margin around the content */
+        }
+    
+        h1, h2 {
+            color: #34568B; /* Rich blue for headings */
+        }
+    
+        h2 {
+            border-bottom: 2px solid #34568B; /* Adds a line under the subheadings */
+            padding-bottom: 5px; /* Spacing under subheading text */
+        }
+    
+        code {
+            background-color: #ffffff; /* White background for code blocks */
+            border: 1px solid #ccc; /* Grey border around code blocks */
+            display: block; /* Ensures it takes the full width */
+            padding: 10px; /* Pads the inside of the code block */
+            margin-top: 10px; /* Space above the code block */
+            margin-bottom: 20px; /* Space below the code block */
+            white-space: pre-wrap; /* Maintains formatting and spacing */
+            overflow-x: auto; /* Allows horizontal scrolling if needed */
+            font-family: 'Courier New', Courier, monospace; /* Monospaced font for code */
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for 3D effect */
+        }
+    
+        .example {
+            background-color: #e8e8e8; /* Lighter grey background for sections */
+            padding: 15px; /* Padding inside sections */
+            border-left: 5px solid #34568B; /* Blue accent on the left border */
+            margin-bottom: 30px; /* Space below each section */
+        }
+    </style>    
+</head>
+<body>
+    <h1>Coding Concepts Study Guide</h1>
+
+    <div class="example">
+        <h2>1. Method Parts: Return Type, Parameters, Specification, Keywords, Types, Literals</h2>
+        <code>
+            // Return type: int
+            // Parameters: int a, int b
+            // Keywords: return
+            // Literals: 0
+
+            public int sum(int a, int b) {
+                return a + b;
+            }
+        </code>
+    </div>
+
+    <div class="example">
+        <h2>2. Class Parts: Fields, Methods, Constructors, Supertype</h2>
+        <code>
+            // Fields: int count
+            // Methods: increment(), getCount()
+            // Constructor: Counter()
+            // Supertype: Object (implicit)
+
+            public class Counter {
+                private int count;
+
+                public Counter() {
+                    this.count = 0;
+                }
+
+                public void increment() {
+                    count++;
+                }
+
+                public int getCount() {
+                    return count;
+                }
+            }
+        </code>
+    </div>
+
+    <div class="example">
+        <h2>3. Class Diagram Parts: Name, State, Behavior</h2>
+        <code>
+            // Class name: Counter
+            // State: count (field)
+            // Behavior: increment(), getCount() (methods)
+        </code>
+    </div>
+
+    <div class="example">
+        <h2>4. Create a Class Diagram from Code</h2>
+        <code>
+            // Class: Fraction
+            // Fields: numerator, denominator
+            // Methods: getNumerator(), getDenominator()
+
+            public class Fraction {
+                private int numerator;
+                private int denominator;
+
+                public Fraction(int numerator, int denominator) {
+                    this.numerator = numerator;
+                    this.denominator = denominator;
+                }
+
+                public int getNumerator() {
+                    return numerator;
+                }
+
+                public int getDenominator() {
+                    return denominator;
+                }
+            }
+        </code>
+    </div>
+
+    <div class="example">
+        <h2>5. Field Declarations and Class Invariants</h2>
+        <code>
+            // Fields: int value
+            // Class invariant: value >= 0
+
+            public class Counter {
+                private int value;
+
+                public Counter() {
+                    this.value = 0; // invariant is truthified
+                }
+            }
+        </code>
+    </div>
+
+    <div class="example">
+        <h2>6. Default Field Values by Type</h2>
+        <code>
+            // int -> 0
+            // double -> 0.0
+            // boolean -> false
+            // object references -> null
+        </code>
+    </div>
+
+    <div class="example">
+        <h2>7. Instantiate Object from Constructor</h2>
+        <code>
+            // Constructor: Fraction(int numerator, int denominator)
+            Fraction frac = new Fraction(1, 2);
+        </code>
+    </div>
+
+    <div class="example">
+        <h2>8. Constructor to Satisfy Class Invariant</h2>
+        <code>
+            // Fields: int numerator, int denominator
+            // Class invariant: denominator != 0
+
+            public Fraction(int numerator, int denominator) {
+                if (denominator == 0) {
+                    throw new IllegalArgumentException("Denominator cannot be zero.");
+                }
+                this.numerator = numerator;
+                this.denominator = denominator;
+            }
+        </code>
+    </div>
+
+    <div class="example">
+        <h2>9. Invoke a Method</h2>
+        <code>
+            // Method: increment()
+            Counter counter = new Counter();
+            counter.increment();
+        </code>
+    </div>
+
+    <div class="example">
+        <h2>10. Method Body Based on Specification</h2>
+        <code>
+            // Method specification: increments the count
+            public void increment() {
+                count++;
+            }
+        </code>
+    </div>
+
+    <div class="example">
+        <h2>11. Name Scope in Code</h2>
+        <code>
+            // 'x' is in scope inside the method body
+
+            public void printX() {
+                int x = 10;
+                System.out.println(x);
+            }
+        </code>
+    </div>
+
+    <div class="example">
+        <h2>12. Shadowing Example</h2>
+        <code>
+            // Local variable 'x' shadows field 'x'
+            public class Test {
+                private int x = 5;
+
+                public void setX(int x) {
+                    this.x = x; // 'this.x' refers to the field
+                }
+            }
+        </code>
+    </div>
+
+    <div class="example">
+        <h2>13. Client vs. Implementer Code</h2>
+        <code>
+            // Client: invokes methods
+            Counter counter = new Counter();
+            counter.increment();
+
+            // Implementer: writes the method logic
+            public void increment() {
+                count++;
+            }
+        </code>
+    </div>
+
+    <div class="example">
+        <h2>14. Method Specification Parts: Preconditions, Postconditions, Effects</h2>
+        <code>
+            // Preconditions: x must be positive
+            // Postconditions: returns square of x
+            // Effects: none
+
+            public int square(int x) {
+                return x * x;
+            }
+        </code>
+    </div>
+
+    <div class="example">
+        <h2>15. Predicting Method Behavior from Specification</h2>
+        <code>
+            // Given: square(2)
+            // Prediction: returns 4
+        </code>
+    </div>
+
+    <div class="example">
+        <h2>16. Annotate Method Body with Class Invariant</h2>
+        <code>
+            // Class invariant: count >= 0
+
+            public void increment() {
+                // count must be >= 0 here
+                count++;
+            }
+        </code>
+    </div>
+    <div class="example">
+        <h2>17. Write Defensive Code to Assert Preconditions of a Method</h2>
+        <code>
+            // Method: withdraw(int amount)
+            // Preconditions: amount > 0, amount <= balance
+            
+            public void withdraw(int amount) {
+                if (amount <= 0) {
+                    throw new IllegalArgumentException("Amount must be positive.");
+                }
+                if (amount > balance) {
+                    throw new IllegalArgumentException("Insufficient funds.");
+                }
+                balance -= amount;
+            }
+        </code>
+    </div>
+    
+    <div class="example">
+        <h2>18. Predict Access Result for Public/Private Members</h2>
+        <code>
+            // Class with public and private members
+            public class Account {
+                public String name;
+                private int balance;
+            }
+    
+            // Client code
+            Account acc = new Account();
+            acc.name = "John";  // allowed
+            acc.balance = 100;  // compilation error (balance is private)
+        </code>
+    </div>
+    
+    <div class="example">
+        <h2>19. Write Client Code That Invalidates Class Invariant</h2>
+        <code>
+            // Public field allows class invariant to be violated
+            public class Counter {
+                public int value;  // Invariant: value >= 0
+            }
+    
+            // Client code
+            Counter c = new Counter();
+            c.value = -5;  // Violates class invariant
+        </code>
+    </div>
+    
+    <div class="example">
+        <h2>20. Encapsulate State with Public and Private Modifiers</h2>
+        <code>
+            // Class members marked as public or private
+            public class BankAccount {
+                private int balance;
+                public void deposit(int amount) {
+                    balance += amount;
+                }
+            }
+        </code>
+    </div>
+    
+    <div class="example">
+        <h2>21. Predict Whether a Class Implements an Interface</h2>
+        <code>
+            // Interface: Flyable
+            public interface Flyable {
+                void fly();
+            }
+    
+            // Class: Bird implements Flyable
+            public class Bird implements Flyable {
+                public void fly() {
+                    // Method implemented correctly, no compilation error
+                }
+            }
+        </code>
+    </div>
+    
+    <div class="example">
+        <h2>22. Write a Class that Implements an Interface</h2>
+        <code>
+            // Interface: ComplexNumber
+            public interface ComplexNumber {
+                double getReal();
+                double getImaginary();
+                ComplexNumber add(ComplexNumber other);
+            }
+    
+            // Class: Complex
+            public class Complex implements ComplexNumber {
+                private double real;
+                private double imaginary;
+    
+                public Complex(double real, double imaginary) {
+                    this.real = real;
+                    this.imaginary = imaginary;
+                }
+    
+                public double getReal() {
+                    return real;
+                }
+    
+                public double getImaginary() {
+                    return imaginary;
+                }
+    
+                public ComplexNumber add(ComplexNumber other) {
+                    return new Complex(this.real + other.getReal(), this.imaginary + other.getImaginary());
+                }
+            }
+        </code>
+    </div>
+    
+    <div class="example">
+        <h2>23. Write an Interface that Abstracts Common Behavior</h2>
+        <code>
+            // Common behavior: drive()
+            public interface Drivable {
+                void drive();
+            }
+    
+            // Class 1: Car
+            public class Car implements Drivable {
+                public void drive() {
+                    System.out.println("Car is driving");
+                }
+            }
+    
+            // Class 2: Truck
+            public class Truck implements Drivable {
+                public void drive() {
+                    System.out.println("Truck is driving");
+                }
+            }
+        </code>
+    </div>
+    
+    <div class="example">
+        <h2>24. State Subtype Relationships</h2>
+        <code>
+            // Class hierarchy
+            // Piece <: Rook, Piece <: King, Fraction not related
+    
+            // Subtypes:
+            // Rook <: Piece
+            // King <: Piece
+        </code>
+    </div>
+    
+    <div class="example">
+        <h2>25. Apply Compile-Time Reference Rule</h2>
+        <code>
+            // Example: Piece p = new King();
+            // Will compile if King extends Piece
+            p.castle();  // Will compile if castle() is defined in Piece or King
+        </code>
+    </div>
+    
+    <div class="example">
+        <h2>26. Insert a Cast to Make Code Compile</h2>
+        <code>
+            // Example: Object obj = "Hello";
+            // Code will not compile because Object does not have length() method
+            // Fix with a cast
+    
+            String str = (String)obj;
+            System.out.println(str.length());
+        </code>
+    </div>
+    
+    <div class="example">
+        <h2>27. Perform a Runtime Check and Cast</h2>
+        <code>
+            // Example: Object obj = "Hello";
+    
+            if (obj instanceof String) {
+                String str = (String)obj;
+                System.out.println(str.length());  // valid
+            }
+        </code>
+    </div>
+    
+    <div class="example">
+        <h2>28. Classify a Cast</h2>
+        <code>
+            // Example:
+            Object obj = "Hello";
+            
+            // (i) Allowed at compile-time but could fail at runtime:
+            Integer num = (Integer)obj;  // fails at runtime
+    
+            // (ii) Allowed at compile-time and will always succeed:
+            String str = (String)obj;  // unnecessary
+    
+            // (iii) Allowed at compile-time but will always fail:
+            Integer num2 = (Integer)"abc";  // fails at runtime
+    
+            // (iv) Not allowed at compile-time:
+            // int num3 = (int)"abc";  // compile-time error
+        </code>
+    </div>
+    
+    <div class="example">
+        <h2>29. Use Bottom-Up Rule for Dynamic Dispatch</h2>
+        <code>
+            // Example: Parent/Child class with dynamic dispatch
+    
+            public class Parent {
+                public void speak() {
+                    System.out.println("Parent speaks");
+                }
+            }
+    
+            public class Child extends Parent {
+                public void speak() {
+                    System.out.println("Child speaks");
+                }
+            }
+    
+            Parent p = new Child();
+            p.speak();  // prints "Child speaks" due to dynamic dispatch
+        </code>
+    </div>
+    
+    <div class="example">
+        <h2>30. Override a Method in a Subclass</h2>
+        <code>
+            // Example: override Object.toString()
+            public class Fraction {
+                private int numerator, denominator;
+    
+                @Override
+                public String toString() {
+                    return numerator + "/" + denominator;
+                }
+            }
+        </code>
+    </div>
+    
+    <div class="example">
+        <h2>31. Constructor Delegates to Superclass</h2>
+        <code>
+            // Example: 3DPoint constructor delegates to 2DPoint
+    
+            public class Point2D {
+                protected int x, y;
+    
+                public Point2D(int x, int y) {
+                    this.x = x;
+                    this.y = y;
+                }
+            }
+    
+            public class Point3D extends Point2D {
+                private int z;
+    
+                public Point3D(int x, int y, int z) {
+                    super(x, y);  // delegate x and y to superclass
+                    this.z = z;   // initialize z here
+                }
+            }
+        </code>
+    </div>
+    
+    <div class="example">
+        <h2>32. Method Delegates to Superclass</h2>
+        <code>
+            // Example: negating 2D and 3D points
+    
+            public class Point2D {
+                protected int x, y;
+    
+                public void negate() {
+                    x = -x;
+                    y = -y;
+                }
+            }
+    
+            public class Point3D extends Point2D {
+                private int z;
+    
+                @Override
+                public void negate() {
+                    super.negate();  // delegate x and y negation to superclass
+                    z = -z;          // negate z here
+                }
+            }
+        </code>
+    </div>
+    
+    <div class="example">
+        <h2>33. Classify a New Expression in Abstract Class Hierarchy</h2>
+        <code>
+            // Example: Abstract class Animal
+    
+            abstract class Animal {
+                abstract void sound();
+            }
+    
+            // Cannot instantiate abstract class:
+            Animal a = new Animal();  // compile-time error
+    
+            // Allowed:
+            Animal a = new Dog();  // if Dog is a concrete subclass
+        </code>
+    </div>
+    
+    <div class="example">
+        <h2>34. Revise Class to Make it Abstract</h2>
+        <code>
+            // Example: Make Piece abstract
+    
+            // Before:
+            public class Piece {
+                public void move() {
+                    // cannot implement here
+                }
+            }
+    
+            // After:
+            public abstract class Piece {
+                public abstract void move();  // declare as abstract
+            }
+        </code>
+    </div>
+    
+    <div class="example">
+        <h2>35. Add Class Object to Class Diagram</h2>
+        <code>
+            // All classes implicitly extend Object
+    
+            public class MyClass {
+                @Override
+                public String toString() {
+                    return "MyClass";
+                }
+    
+                @Override
+                public boolean equals(Object obj) {
+                    return this == obj;
+                }
+            }
+        </code>
+    </div>
+    
+    <div class="example">
+        <h2>36. Predict Equals() Comparisons</h2>
+        <code>
+            // Example: Comparisons with equals() and ==
+    
+            MyClass obj1 = new MyClass();
+            MyClass obj2 = new MyClass();
+    
+            System.out.println(obj1 == obj2);     // false (different references)
+            System.out.println(obj1.equals(obj2));  // false (not equal by equals)
+        </code>
+    </div>
+    
+    <div class="example">
+        <h2>37. Evaluate Equals() Properties</h2>
+        <code>
+            // Properties:
+            // Reflexive: obj.equals(obj) -> true
+            // Symmetric: obj1.equals(obj2) == obj2.equals(obj1)
+            // Transitive: obj1.equals(obj2) && obj2.equals(obj3) -> obj1.equals(obj3)
+    
+            public class MyClass {
+                @Override
+                public boolean equals(Object obj) {
+                    return this == obj;
+                }
+            }
+    
+            // Reflexive: true
+            // Symmetric: true
+            // Transitive: true
+        </code>
+    </div>    
+</body>
+</html>
