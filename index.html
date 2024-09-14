@@ -687,5 +687,128 @@
             // Transitive: true
         </code> </pre>
     </div>    
+    <div class="example">
+        <h2>Translate a Mathematical Formula into Java</h2>
+        <pre><code class="language-java">
+        // Mathematical formula: x = 3 + 7 * 2
+        int x = 3 + 7 * 2;
+        </code></pre>
+    </div>
+    
+    <div class="example">
+        <h2>Classify Java Types</h2>
+        <pre><code class="language-java">
+        // Example type: int
+        // Classification: Primitive type
+        // Example type: String
+        // Classification: Reference type
+        </code></pre>
+    </div>
+    
+    <div class="example">
+        <h2>Initialize Variables in Java</h2>
+        <pre><code class="language-java">
+        // Type: double, Value: 3.14
+        double pi = 3.14;
+        // Type: boolean, Value: true
+        boolean isValid = true;
+        </code></pre>
+    </div>
+    
+    <div class="example">
+        <h2>Impact of the final Keyword in Java</h2>
+        <pre><code class="language-java">
+        // Adding 'final' to a variable declaration
+        final int x = 10;
+        // x = 20; // This will cause a compile-time error as 'x' is final
+        </code></pre>
+    </div>
+    
+    <div class="example">
+        <h2>Widening and Casting in Java</h2>
+        <pre><code class="language-java">
+        // Example: Widening from int to double
+        double result = 1.8 * 10; // result is 18.0
+        // Example: Casting int to double
+        double fraction = (double) 1 / 4; // fraction is 0.25
+        </code></pre>
+    </div>
+    
+    <div class="example">
+        <h2>Assignment Statements in Java</h2>
+        <pre><code class="language-java">
+        // Increment x by 1
+        int x = 1;
+        x += 1;
+        // Assign foo the result of function bar
+        String foo = bar(baz, quux);
+        // Initialize next to null
+        Object next = null;
+        </code></pre>
+    </div>
+    
+    <div class="example">
+        <h2>Implement a Static Method in Java</h2>
+        <pre><code class="language-java">
+        // Static method to find the maximum of two numbers
+        public static int max(int a, int b) {
+            return a > b ? a : b;
+        }
+        </code></pre>
+    </div>
+    
+    <div class="example">
+        <h2>Manipulate Strings in Java</h2>
+        <pre><code class="language-java">
+        // Return the next-to-last character of a string
+        public static char nextToLast(String str) {
+            return str.length() > 1 ? str.charAt(str.length() - 2) : null;
+        }
+        </code></pre>
+    </div>
+    
+    <div class="example">
+        <h2>Array Manipulation in Java</h2>
+        <pre><code class="language-java">
+        // Create an array of integers from 0 to 9
+        int[] smallInts = new int[10];
+        for (int i = 0; i < smallInts.length; i++) {
+            smallInts[i] = i;
+        }
+        </code></pre>
+    </div>
+    
+    <div class="example">
+        <h2>Classify Programs by Error Type</h2>
+        <pre><code class="language-java">
+        // Example program
+        public class Test {
+            public static void main(String[] args) {
+                int x = 0;
+                int y = 10 / x; // This will cause a runtime error (division by zero)
+            }
+        }
+        </code></pre>
+    </div>
+    
+    <div class="example">
+        <h2>Determine Static Type of an Expression</h2>
+        <pre><code class="language-java">
+        // Expression: x + y where x is int and y is double
+        int x = 5;
+        double y = 6.2;
+        double z = x + y; // z's static type is double
+        </code></pre>
+    </div>
+    
+    <div class="example">
+        <h2>Determine Dynamic Type of an Expression</h2>
+        <pre><code class="language-java">
+        // Expression: getClass() method call
+        Object obj = new String("Hello");
+        System.out.println(obj.getClass().getSimpleName()); // Outputs "String", the dynamic type
+        </code></pre>
+    </div>
+    
 </body>
 </html>
